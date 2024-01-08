@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Index from "@/pages/Index.vue";
+import TeamPage from "@/pages/TeamPage.vue";
+import UserPage from "@/pages/UserPage.vue";
+import SearchPage from "@/pages/SearchPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +10,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: Index
     },
     {
       path: '/about',
@@ -16,7 +19,22 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
-    }
+    },
+    {
+      path: '/team',
+      name: 'team',
+      component: TeamPage
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: UserPage
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: SearchPage
+    },
   ]
 })
 
