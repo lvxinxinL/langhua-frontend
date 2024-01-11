@@ -34,7 +34,7 @@ import {useRouter} from "vue-router";
 const router = useRouter();
 
 const onClickLeft = () => {
-  router.push('/');
+  router.back();
 };
 
     // const onClickRight = () => alert("右");
