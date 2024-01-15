@@ -4,6 +4,7 @@ import TeamPage from "@/pages/TeamPage.vue";
 import UserPage from "@/pages/UserPage.vue";
 import SearchPage from "@/pages/SearchPage.vue";
 import UserEditPage from "@/pages/UserEditPage.vue";
+import SearchResultPage from "@/pages/SearchResultPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +41,11 @@ const router = createRouter({
       path: '/user/edit',
       name: 'edit',
       component: UserEditPage
+    },
+    {
+      path: '/user/list',
+      name: 'searchUserList',
+      component: SearchResultPage
     },
   ]
 })

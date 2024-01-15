@@ -24,12 +24,26 @@
       :items="tagList"
   />
 
+  <van-button type="primary" @click="doSearch">搜索</van-button>
+
 </template>
 
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRouter } from "vue-router";
 
+const router = useRouter();
+
+const doSearch =() => {
+  router.push({
+    path: 'user/list',
+    query: {
+      gender: '男',
+      study: 'java',
+    }
+  })
+}
 const searchText = ref('');
 
 /**
