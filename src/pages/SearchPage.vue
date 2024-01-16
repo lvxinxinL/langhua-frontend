@@ -24,7 +24,9 @@
       :items="tagList"
   />
 
-  <van-button type="primary" @click="doSearch">搜索</van-button>
+  <div style="padding: 3px">
+    <van-button block type="primary" @click="doSearch">搜索</van-button>
+  </div>
 
 </template>
 
@@ -39,8 +41,7 @@ const doSearch =() => {
   router.push({
     path: 'user/list',
     query: {
-      gender: '男',
-      study: 'java',
+      tags: activeIds.value,
     }
   })
 }
