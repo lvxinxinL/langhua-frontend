@@ -1,6 +1,6 @@
 <template>
   <van-cell title="昵称" is-link :value="user.username" @click="toEdit('username', '昵称',user.username)"/>
-  <van-cell title="账户" :value="user.userAccount" @click="toEdit('userAccount', '账户',user.userAccount)"/>
+  <van-cell title="账户" :value="user.userAccount"/>
   <van-cell title="头像" :value="user.avatarUrl" @click="toEdit('avatarUrl', '头像',user.avatarUrl)">
     <img :src="user.avatarUrl"/>
   </van-cell>

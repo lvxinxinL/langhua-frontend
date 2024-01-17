@@ -15,8 +15,7 @@
       <van-button size="small">联系我</van-button>
     </template>
   </van-card>
-<!--不用写 if userList 未空的判断也能实现？组件组件自己完成了判断-->
-  <van-empty image="search" description="暂无符合要求的用户" />
+  <van-empty v-if="!userList || userList.length < 1" image="search" description="暂无符合要求的用户" />
 
 </template>
 

@@ -5,6 +5,7 @@ import UserPage from "@/pages/UserPage.vue";
 import SearchPage from "@/pages/SearchPage.vue";
 import UserEditPage from "@/pages/UserEditPage.vue";
 import SearchResultPage from "@/pages/SearchResultPage.vue";
+import UserLoginPage from "@/pages/UserLoginPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,6 +47,11 @@ const router = createRouter({
       path: '/user/list',
       name: 'searchUserList',
       component: SearchResultPage
+    },
+    {
+      path: '/user/login',
+      name: 'userLoginPage',
+      component: UserLoginPage
     },
   ]
 })
