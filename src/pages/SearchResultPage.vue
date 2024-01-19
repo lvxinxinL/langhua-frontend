@@ -1,20 +1,6 @@
 <template>
 <!--搜索结果列表-->
-  <van-card
-      v-for="user in userList"
-      :desc="user.profile"
-      :title="`${user.username}(${user.planetCode})`"
-      :thumb="user.avatarUrl"
-  >
-    <template #tags>
-      <van-tag plain type="danger" v-for="tag in user.tags" style="margin-right: 5px; margin-top: 3px">
-        {{ tag }}
-      </van-tag>
-    </template>
-    <template #footer>
-      <van-button size="small">联系我</van-button>
-    </template>
-  </van-card>
+  <user-card-list :user-list="userList"/>
   <van-empty v-if="!userList || userList.length < 1" image="search" description="暂无符合要求的用户" />
 
 </template>
@@ -25,6 +11,7 @@ import {onMounted, ref} from "vue";
 import myAxios from "/src/plugins/myAxios.js";
 import qs from 'qs';
 import type {UserType} from "@/models/user";
+import UserCardList from "@/components/UserCardList.vue";
 
 
 const route = useRoute();
