@@ -43,7 +43,7 @@ onMounted( async () => {
     .then(function (response) {
       // handle success
       console.log("/user/search/tags succeed", response);
-      return response.data?.data;
+      return response.data;
     })
     .catch(function (error) {
       console.log("/user/search/tags error", error);

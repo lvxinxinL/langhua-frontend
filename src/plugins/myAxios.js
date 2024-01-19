@@ -4,6 +4,8 @@ const myAxios = axios.create({
     baseURL: 'http://localhost:8080/api/',
 });
 
+myAxios.defaults.withCredentials = true;
+
 // Add a request interceptor
 myAxios.interceptors.request.use(function (config) {
     // Do something before request is sent
