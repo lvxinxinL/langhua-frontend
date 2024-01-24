@@ -1,5 +1,5 @@
 <template>
-<!--搜索结果列表-->
+  <!--搜索结果列表-->
   <user-card-list :user-list="userList"/>
   <van-empty v-if="!userList || userList.length < 1" image="search" description="暂无符合要求的用户" />
 
@@ -12,6 +12,7 @@ import myAxios from "/src/plugins/myAxios.js";
 import qs from 'qs';
 import type {UserType} from "@/models/user";
 import UserCardList from "@/components/UserCardList.vue";
+import {Toast} from "vant";
 
 
 const route = useRoute();
@@ -34,6 +35,7 @@ onMounted( async () => {
     })
     .catch(function (error) {
       console.log("/user/search/tags error", error);
+      Toast.fail('请求失败')
     })
   if(userListData) {
     userListData.forEach(user => {

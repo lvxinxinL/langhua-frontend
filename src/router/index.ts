@@ -6,6 +6,7 @@ import SearchPage from "@/pages/SearchPage.vue";
 import UserEditPage from "@/pages/UserEditPage.vue";
 import SearchResultPage from "@/pages/SearchResultPage.vue";
 import UserLoginPage from "@/pages/UserLoginPage.vue";
+import TeamAddPage from "@/pages/TeamAddPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -52,6 +53,11 @@ const router = createRouter({
       path: '/user/login',
       name: 'userLoginPage',
       component: UserLoginPage
+    },
+    {
+      path: '/team/add',
+      name: 'teamAddPage',
+      component: TeamAddPage
     },
   ]
 })

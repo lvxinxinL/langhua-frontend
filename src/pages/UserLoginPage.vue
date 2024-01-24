@@ -33,6 +33,7 @@ import { useRouter } from 'vue-router';
 import myAxios from "../plugins/myAxios";
 // import {Toast} from "vant";
 import 'vant/es/toast/style';
+import {Toast} from "vant";
 
 const router = useRouter();
 const userAccount = ref('');
@@ -46,7 +47,7 @@ const onSubmit = async (values) => {
   if (res.code === 0 && res.data) {
     router.replace("/");
   } else {
-    Toast.fail("登录失败")
+    Toast.fail("登录失败");
   }
 };
 
