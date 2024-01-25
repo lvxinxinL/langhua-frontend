@@ -7,6 +7,10 @@ import UserEditPage from "@/pages/UserEditPage.vue";
 import SearchResultPage from "@/pages/SearchResultPage.vue";
 import UserLoginPage from "@/pages/UserLoginPage.vue";
 import TeamAddPage from "@/pages/TeamAddPage.vue";
+import TeamUpdatePage from "@/pages/TeamUpdatePage.vue";
+import UserTeamJoinPage from "@/pages/UserTeamJoinPage.vue";
+import UserTeamCreatePage from "@/pages/UserTeamCreatePage.vue";
+import UserUpdatePage from "@/pages/UserUpdatePage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +44,11 @@ const router = createRouter({
       component: SearchPage
     },
     {
+      path: '/user/update',
+      name: 'update',
+      component: UserUpdatePage
+    },
+    {
       path: '/user/edit',
       name: 'edit',
       component: UserEditPage
@@ -58,6 +67,21 @@ const router = createRouter({
       path: '/team/add',
       name: 'teamAddPage',
       component: TeamAddPage
+    },
+    {
+      path: '/team/update',
+      name: 'teamUpdatePage',
+      component: TeamUpdatePage
+    },
+    {
+      path: '/user/team/join',
+      name: 'userTeamJoinPage',
+      component: UserTeamJoinPage
+    },
+    {
+      path: '/user/team/create',
+      name: 'userTeamCreatePage',
+      component: UserTeamCreatePage
     },
   ]
 })
