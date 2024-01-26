@@ -1,8 +1,17 @@
 <template>
   <div id="teamPage">
     <van-search v-model="searchText" placeholder="搜索队伍" @search="onSearch" />
-    <van-button class="add-button" type="primary" icon="plus" round="true" @click="doCreateTeam" >创建队伍</van-button>
-<!--    <van-button type="primary" @click="doJoinTeam">创建队伍</van-button>-->
+<!--    <van-button class="add-button" type="primary" icon="plus" round="true" @click="doCreateTeam" >创建队伍</van-button>-->
+    <van-button class="add-button" type="primary" icon="plus" @click="doAddTeam" style="
+    position: fixed;
+    bottom: 70px;
+    width: 50px;
+    right: 30px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 9999;
+    opacity: 0.8"/>
+<!--    <van-button class="add-button" type="primary" @click="doCreateTeam">创建队伍</van-button>-->
     <team-card-list :teamList="teamList" />
     <van-empty v-if="teamList?.length < 1" description="数据为空"/>
   </div>
@@ -20,7 +29,7 @@ const router = useRouter();
 const searchText = ref('');
 
 // 跳转到加入队伍页
-const doCreateTeam = () => {
+const doAddTeam = () => {
   router.push({
     path: "/team/add"
   })

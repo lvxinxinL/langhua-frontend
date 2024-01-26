@@ -17,7 +17,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: '主页',
+      name: '浪花-主页',
       component: Index
     },
     {

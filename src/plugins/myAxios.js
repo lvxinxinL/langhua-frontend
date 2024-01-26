@@ -20,6 +20,11 @@ myAxios.interceptors.request.use(function (config) {
 myAxios.interceptors.response.use(function (response) {
     // Do something with response data
     console.log("接收到请求啦...");
+    // 未登录，强制跳转到登录页
+    if (response?.data?.code === 40100) {
+        const redirectUrl = window.location.href;
+        window.location.href = `/user/login?redirect=${redirectUrl}`;
+    }
     return response.data;
 }, function (error) {
     // Do something with response error

@@ -7,7 +7,15 @@
       <van-tab title="加密" name="private" />
     </van-tabs>
     <div style="margin-bottom: 16px" />
-    <van-button class="add-button" type="primary" icon="plus" round="true" @click="toAddTeam" >创建队伍</van-button>
+    <van-button class="add-button" type="primary" icon="plus" @click="toAddTeam" style="
+    position: fixed;
+    bottom: 70px;
+    width: 50px;
+    right: 30px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 9999;
+    opacity: 0.8"/>
     <team-card-list :teamList="teamList" />
     <van-empty v-if="teamList?.length < 1" description="数据为空"/>
   </div>
