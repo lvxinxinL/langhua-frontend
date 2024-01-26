@@ -132,7 +132,7 @@ const doUpdateTeam = (id: number) => {
  */
 const doQuitTeam = async (id: number) => {
   const res = await myAxios.post('/team/quit', {
-    teamId: id
+    id,
   });
   if (res?.code === 0) {
     Toast.success('操作成功');

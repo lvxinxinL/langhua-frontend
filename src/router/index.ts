@@ -17,12 +17,12 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: '主页',
       component: Index
     },
     {
       path: '/about',
-      name: 'about',
+      name: '关于',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -30,60 +30,61 @@ const router = createRouter({
     },
     {
       path: '/team',
-      name: 'team',
+      name: '队伍',
       component: TeamPage
     },
     {
       path: '/user',
-      name: 'user',
+      name: '个人信息',
       component: UserPage
     },
     {
       path: '/search',
-      name: 'search',
+      name: '搜索',
       component: SearchPage
     },
     {
       path: '/user/update',
-      name: 'update',
+      name: '修改信息',
       component: UserUpdatePage
     },
     {
       path: '/user/edit',
-      name: 'edit',
+      name: '编辑',
       component: UserEditPage
     },
     {
       path: '/user/list',
-      name: 'searchUserList',
+      name: '伙伴列表',
       component: SearchResultPage
     },
     {
       path: '/user/login',
-      name: 'userLoginPage',
+      name: '登录',
       component: UserLoginPage
     },
     {
       path: '/team/add',
-      name: 'teamAddPage',
+      name: '创建队伍',
       component: TeamAddPage
     },
     {
       path: '/team/update',
-      name: 'teamUpdatePage',
+      name: '更新队伍',
       component: TeamUpdatePage
     },
     {
       path: '/user/team/join',
-      name: 'userTeamJoinPage',
+      name: '我加入的队伍',
       component: UserTeamJoinPage
     },
     {
       path: '/user/team/create',
-      name: 'userTeamCreatePage',
+      name: '我创建的队伍',
       component: UserTeamCreatePage
     },
   ]
 })
 
 export default router
+
