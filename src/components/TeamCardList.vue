@@ -73,17 +73,12 @@ const showPasswordDialog = ref(false);
 const password = ref('');
 const joinTeamId = ref(0);
 const currentUser = ref();
-const VanDialog = Dialog.Component;// 大坑！！！没有这个没办法使用 Dialog 的组件调用！！！！
-
 const router = useRouter();
-
-
-
+const VanDialog = Dialog.Component;// 大坑！！！没有这个没办法使用 Dialog 的组件调用！！！！
 
 onMounted(async () => {
   currentUser.value = await getCurrentUser();
 })
-
 
 const preJoinTeam = (team: TeamType) => {
   joinTeamId.value = team.id;
@@ -94,6 +89,9 @@ const preJoinTeam = (team: TeamType) => {
   }
 }
 
+/**
+ * 清除密码输入框的内容
+ */
 const doJoinCancel = () => {
   joinTeamId.value = 0;
   password.value = '';
@@ -103,7 +101,7 @@ const doJoinCancel = () => {
  * 加入队伍
  */
 const doJoinTeam = async () => {
-  showPasswordDialog.value = true;
+  // showPasswordDialog.value = true;
   if (!joinTeamId.value) {
     return;
   }
@@ -116,6 +114,7 @@ const doJoinTeam = async () => {
     doJoinCancel();
   } else {
     Toast.fail('加入失败' + (res.description ? `，${res.description}` : ''));
+    doJoinCancel();
   }
 }
 
