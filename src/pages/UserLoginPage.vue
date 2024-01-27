@@ -35,7 +35,7 @@ import {Toast} from "vant";
 import 'vant/es/toast/style';
 
 const router = useRouter();
-const route = userRoute();
+const route = useRoute();
 const userAccount = ref('');
 const userPassword = ref('');
 const onSubmit = async (values) => {
@@ -45,10 +45,11 @@ const onSubmit = async (values) => {
   })
   console.log(res, "用户登录");
   if (res.code === 0 && res.data) {
-    const redirectUrl = route.query.path;
-    window.location.href=redirectUrl;
+    Toast.success("登录成功")
+    const redirectUrl = route.query?.redirect as string ?? '/';
+    window.location.href = redirectUrl;
   } else {
-    Toast.fail("登录失败");
+    Toast.fail("登录失败！" + res.description);
   }
 };
 

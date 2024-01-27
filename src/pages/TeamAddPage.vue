@@ -101,10 +101,10 @@ const onSubmit = async () => {
   // todo 前端参数校验
   const res = await myAxios.post("/team/add", postData);
   if (res?.code === 0 && res.data){
-    Toast.success('添加成功');
+    Toast.success('添加成功！');
     router.replace("/team");
   } else {
-    Toast.fail('添加失败');
+    Toast.fail('添加失败！' +  res?.description);
   }
 }
 </script>

@@ -43,21 +43,21 @@
         </van-button>
       </template>
     </van-card>
-<!--    <van-dialog v-model:show="showPasswordDialog" title="请输入密码" show-cancel-button @confirm="doJoinTeam" @cancel="doJoinCancel">-->
-<!--      <van-field v-model="password" placeholder="请输入密码"/>-->
-<!--    </van-dialog>-->
+    <van-dialog v-model:show="showPasswordDialog" title="请输入密码" show-cancel-button @confirm="doJoinTeam" @cancel="doJoinCancel">
+      <van-field v-model="password" placeholder="请输入密码" />
+    </van-dialog>
   </div>
 
 </template>
 
 <script setup lang="ts">
-import {TeamType} from "@/models/team";
-import {teamStatusEnum} from "@/constants/team";
+import {TeamType} from "../models/team";
+import {teamStatusEnum} from "../constants/team";
 import ikun from '../assets/ikun.png';
-import myAxios from "../plugins/myAxios.js";
+import myAxios from "../plugins/myAxios";
 import {Dialog, Toast} from "vant";
 import {onMounted, ref} from "vue";
-import {getCurrentUser} from "@/services/user";
+import {getCurrentUser} from "../services/user";
 import {useRouter} from "vue-router";
 
 interface TeamCardListProps {
@@ -73,12 +73,17 @@ const showPasswordDialog = ref(false);
 const password = ref('');
 const joinTeamId = ref(0);
 const currentUser = ref();
+const VanDialog = Dialog.Component;// 大坑！！！没有这个没办法使用 Dialog 的组件调用！！！！
 
 const router = useRouter();
+
+
+
 
 onMounted(async () => {
   currentUser.value = await getCurrentUser();
 })
+
 
 const preJoinTeam = (team: TeamType) => {
   joinTeamId.value = team.id;
@@ -98,6 +103,7 @@ const doJoinCancel = () => {
  * 加入队伍
  */
 const doJoinTeam = async () => {
+  showPasswordDialog.value = true;
   if (!joinTeamId.value) {
     return;
   }
